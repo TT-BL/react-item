@@ -1,8 +1,24 @@
 import React from 'react'
 import {render} from 'react-dom'
 import App from './App'
-
+import {HashRouter as Router,Route,Switch,Redirect} from 'react-router-dom'
+import './index.less'
+import {mainRouter} from './routers'
 render(
-    <App></App>,
+    <Router>
+        <Switch>
+            <Route path='/admin' render={
+                (routerProps)=>{
+                    return <App {...routerProps}/>
+                }
+            } />
+            {mainRouter.map((route)=>{
+                return <Route key={route.pathname} path={route.pathname} component={route.component}></Route>
+            })
+            }
+            <Redirect to='/admin' from='/' exact></Redirect>
+            <Redirect to='/404'></Redirect>
+        </Switch>
+    </Router>,
     document.querySelector('#root')
 )
