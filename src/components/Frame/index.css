@@ -1,0 +1,9 @@
+.a-header {
+  background: #fff;
+}
+.a-header .a-logo {
+  height: 64px;
+}
+.a-header .a-logo img {
+  max-height: 60px;
+}
