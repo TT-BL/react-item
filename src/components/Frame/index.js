@@ -10,7 +10,6 @@ const { Header, Content, Sider } = Layout;
 class Frame extends Component {
     onMenuClick=({key})=>{
         this.props.history.push(key)
-        console.log(this.props)
     }
     render() {
         return (
