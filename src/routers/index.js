@@ -21,7 +21,7 @@ export const adminRouter=[
         pathname: '/admin/artical',
         component: Artical,
         exact:true,
-        title:'文章列表',
+        title:'文章管理',
         isNaN:true,
         icon:"copy"
     },

@@ -23,4 +23,13 @@ export const getArticles=(offset=0,limit=10)=>{
         offset,
         limit
     })
+} 
+export const deleteArtical=(id)=>{
+    return service.post(`/api/v1/articleDelete/${id}`)
+}
+export const getArtical=(id)=>{
+    return service.post(`/api/v1/article/${id}`)
+}
+export const saveArtical=(id,data)=>{
+    return service.post(`/api/v1/articleEdit/${id}`,data)
 }

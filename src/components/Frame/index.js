@@ -9,6 +9,8 @@ const { Header, Content, Sider } = Layout;
 @withRouter
 class Frame extends Component {
     onMenuClick=({key})=>{
+        // console.log(key)
+        console.log(this.props)
         this.props.history.push(key)
     }
     render() {
