@@ -40,7 +40,7 @@ export const adminRouter=[
     {
         pathname: '/admin/dashboard',
         component: Dashboard,
-        title:'Dashboard',
+        title:'仪表盘',
         icon:"dashboard",
         isNaN:true
     }

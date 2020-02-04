@@ -87,7 +87,7 @@ class Edit extends Component {
             <div>
                 <Card title="编辑文章" bordered={false} extra={<Button onClick={this.props.history.goBack}>取消</Button>} >
                     <Spin spinning={this.state.isLoading}>
-                        <Form onSubmit={this.handleSubmit} className="login-form" {...formItemLayout}>
+                        <Form  {...formItemLayout} onSubmit={this.handleSubmit} className="login-form">
                             <Form.Item label='标题'>
                                 {getFieldDecorator('title', {
                                     rules: [{ required: true, message: 'title is required!' }],

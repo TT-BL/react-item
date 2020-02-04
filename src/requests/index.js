@@ -33,3 +33,6 @@ export const getArtical=(id)=>{
 export const saveArtical=(id,data)=>{
     return service.post(`/api/v1/articleEdit/${id}`,data)
 }
+export const getArticalAmount=()=>{
+    return service.post(`/api/v1/articleAmount`)
+}
