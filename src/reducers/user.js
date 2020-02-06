@@ -28,8 +28,13 @@ export default (state = initState, action) => {
                 role: '',
                 avater: '',
                 isLogin:false,
-                isLoading: false
+                isLoading: false,
             }
+        case actionTypes.CHANG_AVATAR:
+            return {
+                ...state,
+                avater:action.payload.avatar
+            }   
         default:
             return state
     }

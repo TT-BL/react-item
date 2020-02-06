@@ -5,7 +5,9 @@ import {
     Dashboard,
     Artical,
     Edit,
-    Notifications
+    Notifications,
+    Unauth,
+    Profile
 } from '../views'
 export const mainRouter=[
     {
@@ -23,7 +25,8 @@ export const adminRouter=[
         component: Dashboard,
         title:'仪表盘',
         icon:"dashboard",
-        isNaN:true
+        isNaN:true,
+        roles:['001','002','003']
     },
     {
         
@@ -32,23 +35,37 @@ export const adminRouter=[
         exact:true,
         title:'文章管理',
         isNaN:true,
-        icon:"copy"
+        icon:"copy",
+        roles:['001','002','003']
     },
     {
         pathname: '/admin/setting',
         component: Setting,
         title:'设置',
         isNaN:true,
-        icon:"setting"
+        icon:"setting",
+        roles:['001']
     },
     {
         pathname: '/admin/artical/edit/:id',
         component: Edit,
-        title:'文章编辑'
+        title:'文章编辑',
+        roles:['001']
     },
     {
         pathname: '/admin/notifications',
         component: Notifications,
+        roles:['001','002','003']
+    },
+    {
+        pathname: '/admin/unauth',
+        component: Unauth,
+        roles:['001','002','003']
+    },
+    {
+        pathname: '/admin/profile',
+        component: Profile,
+        roles:['001','002','003']
     }
     
 ]

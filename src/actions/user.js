@@ -48,3 +48,11 @@ export const login=(userInfo)=>{
 export const logout=()=>{
     return dispatch=>dispatch(LoginFailed())
 }
+export const changeAvatar=(avatar)=>{
+    return {
+        type:actionTypes.CHANG_AVATAR,
+        payload:{
+            avatar
+        }
+    }
+}

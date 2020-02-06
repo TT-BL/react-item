@@ -1,0 +1,9 @@
+.ant-spin-container {
+  width: 82px;
+  height: 82px;
+  border: 1px solid #dedede;
+}
+.ant-spin-container img {
+  width: 100%;
+  height: 100%;
+}

@@ -6,8 +6,8 @@ import {connect} from 'react-redux'
 import {Frame} from './components'
 const route=adminRouter.filter(route=>route.isNaN===true)
 const mapState=(state)=>{
-    const {isLogin}=state.user
-    return {isLogin}
+    const {isLogin,role}=state.user
+    return {isLogin,role}
 }
 @connect(mapState)
 class App extends Component {
@@ -17,9 +17,12 @@ class App extends Component {
             <Frame route={route} >
                 <Switch>
                     {adminRouter.map(route => {
-                        return <Route key={route.pathname} path={route.pathname} render={(routeProps)=>{
-                            return <route.component {...routeProps}/>
+                        // console.log(route.roles.includes(this.props.role))
+                        return (
+                        <Route key={route.pathname} path={route.pathname} render={(routeProps)=>{
+                            return  route.roles.includes(this.props.role)?<route.component {...routeProps}/> :<Redirect to='/admin/unauth'></Redirect>
                         }}exact={route.exact}></Route>
+                        )
                     })}
                     <Redirect to='/admin/dashboard' from='/admin'></Redirect>
                     <Redirect to='/404'></Redirect>

@@ -90,14 +90,19 @@ export default class ArticalList extends Component {
               })
         )
     }
+    setData(state){
+        if(this.updater.isMounted(this)) return
+        this.setSate(state)
+    }
     getData(){
         this.setState({
             isLoading:true
         })
+        // console.log(this)
         getArticles().then(resp=>{
             const columnKeys=Object.keys(resp.list[0])
             const columns=this.CreateColumn(columnKeys)
-            this.setState({
+            this.setData({
                 total:resp.total,
                 columns,
                 dataSource:resp.list,
@@ -109,7 +114,7 @@ export default class ArticalList extends Component {
         })
         .finally(
             ()=>{
-                this.setState({
+                this.setData({
                     isLoading:false
                 })
             }

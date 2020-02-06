@@ -30,7 +30,15 @@ const Notifications=Loadable({
     loader:()=>import('./Notifications'),
     loading:Loading
 })
+const Unauth=Loadable({
+    loader:()=>import('./Unauth'),
+    loading:Loading
+})
 
+const Profile=Loadable({
+    loader:()=>import('./Profile'),
+    loading:Loading
+})
 export {
     Setting,
     NotFound,
@@ -38,5 +46,7 @@ export {
     Dashboard,
     Artical,
     Edit,
-    Notifications
+    Notifications,
+    Unauth,
+    Profile
 }
