@@ -4,6 +4,9 @@ const isDev=process.env.NODE_ENV==='development'
 const service=axios.create({
     baseURL:isDev?'http://rap2api.taobao.org/app/mock/243275':''
 })
+const service1=axios.create({
+    baseURL:isDev?'http://rap2api.taobao.org/app/mock/243275':''
+})
 service.interceptors.request.use(config=>{
     config.data=Object.assign({}, config.data,{
         authToken:'tokenPlacehoder'
@@ -35,4 +38,10 @@ export const saveArtical=(id,data)=>{
 }
 export const getArticalAmount=()=>{
     return service.post(`/api/v1/articleAmount`)
+}
+export const getNotifications=()=>{
+    return service.post(`/api/v1/notifications`)
+} 
+export const loginRequest=(userInfo)=>{
+    return service1.post('/api/v1/login',userInfo)
 }

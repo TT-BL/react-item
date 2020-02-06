@@ -4,7 +4,8 @@ import {
     Login,
     Dashboard,
     Artical,
-    Edit
+    Edit,
+    Notifications
 } from '../views'
 export const mainRouter=[
     {
@@ -18,6 +19,14 @@ export const mainRouter=[
 ] 
 export const adminRouter=[
     {
+        pathname: '/admin/dashboard',
+        component: Dashboard,
+        title:'仪表盘',
+        icon:"dashboard",
+        isNaN:true
+    },
+    {
+        
         pathname: '/admin/artical',
         component: Artical,
         exact:true,
@@ -38,10 +47,8 @@ export const adminRouter=[
         title:'文章编辑'
     },
     {
-        pathname: '/admin/dashboard',
-        component: Dashboard,
-        title:'仪表盘',
-        icon:"dashboard",
-        isNaN:true
+        pathname: '/admin/notifications',
+        component: Notifications,
     }
+    
 ]

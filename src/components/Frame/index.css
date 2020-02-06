@@ -1,8 +1,10 @@
 .a-header {
   background: #fff;
+  display: flex;
 }
 .a-header .a-logo {
   height: 64px;
+  flex: 1;
 }
 .a-header .a-logo img {
   max-height: 60px;
